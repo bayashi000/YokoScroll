@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlayerController.cs" />
+    <Compile Include="Assets\PlayerController1.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/bayashi/Desktop/YokoScroll/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
      * 
      */
 
+    
+
+
+    //移動のボタンの処理
+    bool leftMove;
+
+    bool rightMove;
+
     float maxHP = 5;
     //現在のHP
     float currentHP = 5;
@@ -41,6 +49,8 @@ public class PlayerController : MonoBehaviour
     {
         audioSource = this.gameObject.GetComponent<AudioSource>();
         animator = this.gameObject.GetComponent<Animator>();
+
+       
     }
 
     // Update is called once per frame
@@ -75,18 +85,26 @@ public class PlayerController : MonoBehaviour
     void Move()
     {
         //右移動
-        if (Input.GetKey("right"))
+        if (Input.GetKey("right") || rightMove == true)
         {
             this.transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         }
 
         //左移動
-        if (Input.GetKey("left"))
+        if (Input.GetKey("left") || leftMove == true)
         {
             this.transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKeyDown("space") && jumpCount < 2)
+        if (Input.GetKeyDown("space"))
+        {
+            Jump();
+        }
+    }
+
+    public void Jump()
+    {
+        if (jumpCount < 2)
         {
             this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
             audioSource.clip = jumpSound;
@@ -123,21 +141,42 @@ public class PlayerController : MonoBehaviour
     //当たり判定
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground")
         {
             jumpCount = 0;
         }
-        if(col.gameObject.tag == "Coin")
+        if (col.gameObject.tag == "Coin")
         {
             audioSource.clip = pickUpSound;
             audioSource.Play();
 
             Destroy(col.gameObject);
         }
-        if(col.gameObject.tag == "Doragon")
+        if (col.gameObject.tag == "Doragon")
         {
             currentHP -= 1;
             hpImage.fillAmount = currentHP / maxHP;
         }
+    }
+
+    public void leftButtonDown()
+    {
+        leftMove = true;
+        animator.SetBool("WallkLeft", true);
+    }
+    public void leftButtonUp()
+    {
+        leftMove = false;
+        animator.SetBool("WallkLeft", false);
+    }
+    public void rightButtonDown()
+    {
+        rightMove = true;
+        animator.SetBool("WallkRight", true);
+    }
+    public void rightButtonUp()
+    {
+        rightMove = false;
+        animator.SetBool("WallkRight", false);
     }
 }
