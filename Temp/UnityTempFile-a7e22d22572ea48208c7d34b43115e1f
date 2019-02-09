@@ -298,3 +298,4 @@
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
 "Assets/PlayerController.cs"
+"Assets/PlayerController2.cs"

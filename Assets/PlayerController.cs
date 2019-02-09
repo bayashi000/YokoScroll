@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     //HPimageを宣言
     public Image hpImage;
     public float speed = 7f;
-    public float jumpPower = 5f;
+    public float jumpPower = 7f;
     int jumpCount;
 
     //音のファイルを作る
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (jumpCount < 2)
+        if (jumpCount <= 2)
         {
             this.gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, jumpPower, 0);
             audioSource.clip = jumpSound;
