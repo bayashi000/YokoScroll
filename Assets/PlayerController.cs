@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     //HPimageを宣言
     public Image hpImage;
     public float speed = 7f;
-    public float jumpPower = 7f;
+    public float jumpPower = 5f;
     int jumpCount;
 
     //音のファイルを作る
