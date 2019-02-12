@@ -1,4 +1,0 @@
-#Mon Feb 11 00:37:07 JST 2019
-base.0=/Users/bayashi/Desktop/YokoScroll/Temp/gradleOut/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex
