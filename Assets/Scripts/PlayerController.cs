@@ -4,6 +4,8 @@ using UnityEngine;
 //UIを使う時
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,7 +21,10 @@ public class PlayerController : MonoBehaviour
     //timerText宣言
     public Text timerText;
 
+    public Text CoinText;
+
     float timer = 0.0f;
+    int coinCount;
 
 
     //ゴールしているか、してないか　初期値　false
@@ -168,10 +173,15 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = 0;
         }
+
+        //コインに当たった時
         if (col.gameObject.tag == "Coin")
         {
             audioSource.clip = pickUpSound;
             audioSource.Play();
+
+            coinCount++;
+            CoinText.text = coinCount.ToString();
 
             Destroy(col.gameObject);
         }
@@ -186,6 +196,10 @@ public class PlayerController : MonoBehaviour
         if (col.gameObject.tag == "Goal")
         {
             cleared = true;
+            /*
+            PlayerPrefs.SetFloat("score", timer);
+            SceneManager.LoadScene("Goal");
+            */           
         }
 
     }

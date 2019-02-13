@@ -60,8 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameOver.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Roop.cs" />
+    <Compile Include="Assets\Scripts\StartScene.cs" />
     <Compile Include="Assets\Scripts\Trap.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>/Users/bayashi/Desktop/YokoScroll/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
