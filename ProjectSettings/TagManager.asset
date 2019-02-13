@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Coin
   - Doragon
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //UIを使う時
 using UnityEngine.UI;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,7 +16,13 @@ public class PlayerController : MonoBehaviour
      * 
      */
 
-    
+    //ゴールしているか、してないか　初期値　false
+    bool cleared = false;
+
+
+
+    //fonts
+    public GUIStyle labelStyle;
 
 
     //移動のボタンの処理
@@ -156,6 +163,25 @@ public class PlayerController : MonoBehaviour
         {
             currentHP -= 1;
             hpImage.fillAmount = currentHP / maxHP;
+        }
+
+        //ゴールにぶつかった時
+        if(col.gameObject.tag == "Goal")
+        {
+            cleared = true;
+        }
+
+    }
+
+    void OnGUI()
+    {
+        if (cleared == true)
+        {
+            int sw = Screen.width;
+            int sh = Screen.height;
+            //C#だとこうかく
+            GUI.Label(new Rect(sw / 6, sh / 3, sw * 2 / 3, sh / 3), "CLEARED!!", labelStyle);
+
         }
     }
 
