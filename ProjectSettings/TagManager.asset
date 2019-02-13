@@ -8,6 +8,8 @@ TagManager:
   - Coin
   - Doragon
   - Goal
+  - roop
+  - RoopPoint
   layers:
   - Default
   - TransparentFX
