@@ -10,6 +10,7 @@ TagManager:
   - Goal
   - roop
   - RoopPoint
+  - Fire
   layers:
   - Default
   - TransparentFX

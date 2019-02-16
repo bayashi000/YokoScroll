@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{2A4C13BE-E2B8-37B6-35CE-A194622AC2A5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Goal.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Fire.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="182" Column="50" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="209" Column="29" />
       <File FileName="Assets/Scripts/Trap.cs" Line="27" Column="32" />
-      <File FileName="Assets/Scripts/Trap.cs" Line="30" Column="6" />
       <File FileName="Assets/Scripts/Roop.cs" Line="25" Column="55" />
       <File FileName="Assets/Scripts/StartScene.cs" Line="11" Column="2" />
       <File FileName="Assets/Scripts/GameOver.cs" Line="10" Column="41" />
-      <File FileName="Assets/Scripts/Goal.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Goal.cs" Line="34" Column="10" />
+      <File FileName="Assets/Scripts/Boss.cs" Line="11" Column="24" />
+      <File FileName="Assets/Scripts/Fire.cs" Line="11" Column="36" />
+      <File FileName="Assets/Scripts/DoragonController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

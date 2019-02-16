@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     //ゴールしているか、してないか　初期値　false
     bool cleared = false;
 
+    bool gameOver = false;
 
 
     //fonts
@@ -189,6 +190,8 @@ public class PlayerController : MonoBehaviour
         {
             currentHP -= 1;
             hpImage.fillAmount = currentHP / maxHP;
+
+            SceneManager.LoadScene("GameOver");
         }
 
 
@@ -202,6 +205,12 @@ public class PlayerController : MonoBehaviour
             */           
         }
 
+        //fireにぶつかった時
+        if(col.gameObject.tag == "Fire")
+        {
+            gameOver = true;
+        }
+
     }
 
     void OnGUI()
@@ -212,6 +221,15 @@ public class PlayerController : MonoBehaviour
             int sh = Screen.height;
             //C#だとこうかく
             GUI.Label(new Rect(sw / 6, sh / 3, sw * 2 / 3, sh / 3), "CLEARED!!", labelStyle);
+
+        }
+        if (gameOver == true)
+        {
+            int sw = Screen.width;
+            int sh = Screen.height;
+            //C#だとこうかく
+            GUI.Label(new Rect(sw / 6, sh / 3, sw * 2 / 3, sh / 3), "GAMEOVER!", labelStyle);
+            
 
         }
     }
